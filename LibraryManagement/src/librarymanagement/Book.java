@@ -36,4 +36,9 @@ public class Book extends Document {
         this.Pages = Pages;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" + "Authors= " + Authors + ", Pages= " + Pages + ", Publisher= " + Publishers + "Number of releases= " + pubNumber + '}';
+    }
+
 }

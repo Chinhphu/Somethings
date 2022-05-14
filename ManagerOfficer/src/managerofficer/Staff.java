@@ -18,4 +18,8 @@ public class Staff extends Officer {
         this.task = task;
     }
 
+    @Override
+    public String toString() {
+        return "Staff{task= " + task + ", name= " + Name + ", age= " + age + ", gender= " + gender + ", address= " + Address + "}";
+    }
 }

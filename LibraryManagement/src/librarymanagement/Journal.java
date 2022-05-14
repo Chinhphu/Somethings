@@ -36,4 +36,8 @@ public class Journal extends Document {
         this.Month = Month;
     }
 
+    @Override
+    public String toString() {
+        return "Journal{" + "Issue number= " + numPub + ", Publish month= " + Month + ", Publisher= " + Publishers + "Number of releases= " + pubNumber + '}';
+    }
 }

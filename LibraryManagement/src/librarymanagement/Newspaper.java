@@ -25,5 +25,10 @@ public class Newspaper extends Document {
     public void setDate(String Date) {
         this.Date = Date;
     }
+    
+    @Override
+    public String toString() {
+        return "Journal{" + "Publish date= " + Date + ", Publisher= " + Publishers + "Number of releases= " + pubNumber + '}';
+    }
 
 }

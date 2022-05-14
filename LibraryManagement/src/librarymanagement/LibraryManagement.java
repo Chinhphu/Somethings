@@ -18,46 +18,6 @@ public class LibraryManagement {
     private Hashtable<String, Book> Book = new Hashtable<>();
     private Hashtable<String, Journal> Journal = new Hashtable<>();
     private Hashtable<String, Newspaper> Newspaper = new Hashtable<>();
-    Table show = new Table();
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        LibraryManagement Lib = new LibraryManagement();
-        boolean running;
-        do {
-            running = true;
-            switch (Lib.Menu()) {
-                case 1:
-                    System.out.println("-----Add a new document-----");
-                    Lib.addDocument_1();
-
-                    break;
-                case 2:
-                    System.out.println("----Delete document by document ID----");
-
-                    Lib.deleteDocument_2();
-                    break;
-                case 3:
-                    System.out.println("----Document information----");
-
-                    Lib.showDocument_3();
-                    break;
-
-                case 4:
-                    System.out.println("----Search by document type----");
-
-                    Lib.typeSearch_4();
-                    break;
-                case 5:
-                    System.out.println("Thanks for using this software <3");
-                    running = false;
-                    break;
-
-            }
-        } while (running);
-    }
 
     int Menu() {
 
@@ -127,7 +87,13 @@ public class LibraryManagement {
     }
 
     void showDocument_3() {
-        show.showList(List, "Document ID", "Publisher", "Number of releases");
+        showList();
+    }
+
+    void showList() {
+        List.keySet().forEach((_item) -> {
+            System.out.println("Document ID= " + List.get(_item) + ", " + List.toString());
+        });
     }
 
     void typeSearch_4() {
@@ -135,21 +101,27 @@ public class LibraryManagement {
         System.out.println("1. Book.");
         System.out.println("2. Journal.");
         System.out.println("3. Newspaper.");
-        
+
         switch (Vd.numberCheck("Choose type of document:", "Your choie must be from 1 to 3!", "Your choie must be an integer from 1 to 3!", 1, 3)) {
             case 1:
                 System.out.println("\n-----Book-----");
-                show.showListBook(Book, "Document ID", "Publisher", "Number of releases", "Author", "Number of pages");
+                Book.keySet().forEach((_item) -> {
+                    System.out.println("Document ID= " + Book.get(_item) + ", " + Book.toString());
+                });
                 break;
 
             case 2:
                 System.out.println("\n-----Journal-----");
-                show.showListJournal(Journal, "Document ID", "Publisher", "Number of releases", "Issue number", "Publish month");
+                Journal.keySet().forEach((_item) -> {
+                    System.out.println("Document ID= " + Journal.get(_item) + ", " + Journal.toString());
+                });
                 break;
 
             case 3:
                 System.out.println("\n-----Newspaper-----");
-                show.showListNewspaper(Newspaper, "Document ID", "Publisher", "Number of releases", "Publish date");
+                Newspaper.keySet().forEach((_item) -> {
+                    System.out.println("Document ID= " + Newspaper.get(_item) + ", " + Newspaper.toString());
+                });
                 break;
         }
     }

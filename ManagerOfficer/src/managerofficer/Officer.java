@@ -10,10 +10,10 @@ package managerofficer;
  * @author Admin
  */
 public class Officer {
-    private String Name;
-    private String Address;
-    private int age;
-    private String gender;
+    String Name;
+    String Address;
+    int age;
+    String gender;
 
     public Officer(String Name, String Addres, int age, String gender) {
         this.Name = Name;
@@ -53,6 +53,5 @@ public class Officer {
     public void setGender(String gender) {
         this.gender = gender;
     }
-    
     
 }

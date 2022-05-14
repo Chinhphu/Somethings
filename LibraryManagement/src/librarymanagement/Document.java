@@ -10,8 +10,8 @@ package librarymanagement;
  * @author Admin
  */
 public class Document {
-    private String Publishers;
-    private int pubNumber;
+    String Publishers;
+    int pubNumber;
 
     public Document(String Publishers, int pubNumber) {
         this.Publishers = Publishers;

@@ -17,5 +17,8 @@ public class Worker extends Officer {
         this.level = level;
     }
     
-    
+    @Override
+    public String toString() {
+        return "Worker{level= " + level + ", name= " + Name + ", age= " + age + ", gender= " + gender + ", address= " + Address + "}";
+    }
 }
